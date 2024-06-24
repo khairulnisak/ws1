@@ -1,0 +1,38 @@
+#!/usr/bin/env python
+
+import random
+
+def main():
+    """Start senarai jenis buah-buahan berasid."""
+    print("Teka jenis buah-buahan berasid")
+    
+    genres = [
+        "anggur",
+        "delima",
+        "epal",
+        "mangga",
+        "plum",
+        "nenas",
+        "oren"
+        ]
+
+    x =random.choice(genres)
+    max_trials= 3
+    trial=0
+    guess = None
+    #print(x)
+    while trial<max_trials:
+
+        guess = str(input("Apakah jenis buah-buahan yang berasid? "))
+        
+        if x == guess:
+            print(f"You guessed.Congratulations you got it right!".format(guess))
+            break
+        else:
+            print(f"Unfortunately you got the wrong answer.".format(guess))
+            print(f"You have {max_trials} chances remaining.")
+            max_trials -= 1
+        if max_trials == 0:
+            print(f"out of attempts. The genre is actually {x}.".format(guess))
+        
+main()
